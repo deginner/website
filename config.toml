@@ -1,5 +1,5 @@
 title = "Deginner"
-baseurl = "http://deginner.com"
+baseurl = "http://deginner.com/"
 languageCode = "en-us"
 
 [params]
@@ -14,10 +14,6 @@ languageCode = "en-us"
   logo = "http://i.imgur.com/MINlVoa.png"
   title = "Deginner"
   tagline = "Building open source things and putting 'D's in the names instead of 'bit's and 'coin's"
-
-  # Top actions. Action format: [text, anchor]
-  mainAction = ["Contact Us", "Contact"]
-  secondaryAction = ["Projects &nbsp; ›", "Projects"]
 
 [blackfriday]
   hrefTargetBlank = true

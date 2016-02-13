@@ -1,72 +1,41 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.Params.language }}">
-  <head>
-    <meta charset="{{ .Site.Params.encoding }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="{{ delimit .Site.Params.keywords ", " }}">
-    <meta name="description" content="{{ .Site.Params.description }}">
-    <title>{{ .Title }}</title>
-    {{ partial "head_includes.html" . }}
-  </head>
-
+  {{ partial "header.html" . }}
   <body>
+    {{ partial "subheader.html" . }}
 
-    <main name="{{ .Site.Params.topAnchor }}">
-      <nav>
-        {{ range where .Data.Pages ".Type" "siteMain" }}
-        <a href="#{{ .Params.anchor }}">{{ .Params.anchor }}</a>
-        {{ end }}
-      </nav>
-      <header>
-        <img alt="" class="site-logo" src="{{ .Site.Params.logo }}">
-        <h1 class="h1">{{ .Site.Params.title }}</h1>
-        <h3>{{ .Site.Params.tagline }}</h3>
-      </header>
-      <footer>
-        <mark>
-          <a href="#{{ index .Site.Params.mainAction 1 }}" class="action-main">
-            {{ index .Site.Params.mainAction 0 | safeHTML }}
-          </a>
-          <span class="bar bar-main"></span>
-        </mark>
-        <mark>
-          <a href="#{{ index .Site.Params.secondaryAction 1 }}">
-            {{ index .Site.Params.secondaryAction 0 | safeHTML }}
-          </a>
-          <span class="bar bar-secondary"></span>
-        </mark>
-      </footer>
-    </main>
-
-    {{ range .Site.Params.topAnchors }}
-    <article id="{{ . }}">
-      <header>
-        <h2>{{ . }}</h2>
-      </header>
-      {{ $tmpl := (. | lower) | printf "%s.html" }}
-      {{ partial $tmpl $ }}
-    </article>
-    {{ end }}
-
-    {{ range where .Data.Pages ".Type" "siteMain" }}
-    <article id="{{ .Params.anchor }}">
+    {{ range where .Data.Pages ".Title" "About" }}
+    <article id="{{ .Title }}">
       <header>
         <h2>{{ .Title }}</h2>
       </header>
-      {{ if .Params.usetemplate }}
-        {{ $tmpl := (.Params.anchor | lower) | printf "%s.html" }}
-        {{ partial $tmpl $ }}
-      {{ else }}
       <section class="small-padding">
         {{ .Content }}
       </section>
-      {{ end }}
     </article>
     {{ end }}
 
-    <footer>
-      {{ partial "footer_body.html" . }}
-    </footer>
+    {{ range where .Data.Pages ".Title" "Projects" }}
+    <article id="{{ .Title }}">
+      <header>
+        <h2>{{ .Title }}</h2>
+      </header>
+      {{ partial "projects.html" $ }}
+    </article>
+    {{ end }}
 
+    {{ range where .Data.Pages ".Title" "Contact Us" }}
+    <article id="{{ .Title }}">
+      <header>
+        <h2>{{ .Title }}</h2>
+      </header>
+      <section class="small-padding">
+        {{ .Content }}
+      </section>
+    </article>
+    {{ end }}
+
+    {{ partial "footer.html" . }}
   </body>
 </html>
+
