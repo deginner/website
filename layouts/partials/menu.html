@@ -1,0 +1,13 @@
+{{ $currentNode := . }}
+{{ if eq .Title "Deginner" }}
+  {{ range .Site.Menus.home }}
+    <a href="{{.URL}}">
+        {{ .Name }}
+    </a>
+  {{end}}
+{{end}}
+{{ range .Site.Menus.main }}
+  <a href="{{.URL}}">
+      {{ .Name }}
+  </a>
+{{end}}
