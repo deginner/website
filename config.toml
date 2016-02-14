@@ -21,3 +21,17 @@ languageCode = "en-us"
 
 [blackfriday]
   hrefTargetBlank = true
+
+[[menu.home]]
+    name = "About"
+    weight = 1
+    identifier = "about"
+    url = "#About"
+[[menu.home]]
+    name = "Projects"
+    weight = 2
+    url = "#Projects"
+[[menu.main]]
+    name = "Contact"
+    weight = 4
+    url = "/contact#Contact"

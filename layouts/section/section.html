@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Params.language }}">
+  <head>
+    <meta charset="{{ .Site.Params.encoding }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="{{ delimit .Site.Params.keywords ", " }}">
+    <meta name="description" content="{{ .Site.Params.description }}">
+    <title>{{ .Title }}</title>
+    {{ partial "head_includes.html" . }}
+  </head>
+
+  <body>
+    <main name="{{ .Site.Params.topAnchor }}">
+      <ul class="section-head">
+        <li><a href="/" class="site-logo-content"><img alt="" class="site-logo" src="{{ .Site.Params.logo }}"></a></li>
+        <li>
+          <nav>
+            {{ partial "menu.html" . }}
+          </nav>
+        </li>
+      </ul>
+    </main>
+
+    <article id="{{ .Params.anchor }}">
+      <header>
+        <h2>{{ .Title }}</h2>
+      </header>
+      <section class="small-padding">
+        {{ .Content }}
+      </section>
+    </article>
+
+    <footer>
+      {{ partial "footer_body.html" . }}
+    </footer>
+
+  </body>
+</html>

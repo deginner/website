@@ -16,7 +16,7 @@ b {
 }
 
 main {
-  max-width: 650px;
+  max-width: 850px;
   margin: 0 auto;
   margin-top: 2rem;
 }
@@ -421,6 +421,45 @@ input[type=submit]:hover {
   color: white;
 }
 
+/* Section */
+.section-head {
+  display: table;
+  padding: 0px;
+  width: 100%;
+}
+
+.section-head li {
+  display: inline-block;
+  list-style: none;
+  vertical-align: top;
+}
+
+.section-head li .site-logo-content {
+  display: table;
+}
+
+.section-head li .site-logo {
+  display: table-cell;
+  height: 43px;
+  width: auto;
+}
+
+.section-head li:first-child {
+  float: left;
+  padding: 10px;
+}
+
+.section-head li:last-child {
+  float: right;
+}
+
+.section-head li a {
+  display: inline-block;
+}
+
+.section-head li nav {
+  border-bottom: 0;
+}
 
 @media (max-width: 999px) {
   main {
@@ -508,5 +547,13 @@ input[type=submit]:hover {
 
   .form-half-row {
     width: 100%;
+  }
+
+  .section-head li:first-child {
+    padding: 0px 10px;
+  }
+
+  .section-head li {
+    padding: 0px 10px;
   }
 }

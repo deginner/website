@@ -1,11 +1,12 @@
 +++
-weight = 3
-date = "2015-11-25T23:11:06-05:00"
+weight = 4
+date = "2016-02-14T13:15:08-04:30"
 draft = false
 title = "Contact Us"
-
-anchor = "Contact"
-type = "siteMain"
+layout = "section"
+anchor = "contact"
+type = "section"
+prefix = ""
 +++
 
 <form action='https://crm.zoho.com/crm/WebToLeadForm'
