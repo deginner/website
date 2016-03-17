@@ -6,6 +6,7 @@ title = "yours"
 
 logo = "Y"
 mainurl = "#Contact"
+type	= "siteMain"
 +++
 
 The Deginner team has years of experience building everything from embedded systems and secure financial services to peer-to-peer (p2p) applications. Our software powers [Coinapult](https://coinapult.com), [Crypto Capital](http://cryptocapital.co/), select [Lamassu](http://lamassu.is/) BTMs, and more.  

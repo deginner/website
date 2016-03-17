@@ -20,10 +20,28 @@
       <header>
         <h2>{{ .Title }}</h2>
       </header>
-      {{ partial "projects.html" $ }}
+      <section class="small-padding">
+      {{ .Content }}
     </article>
     {{ end }}
 
+    <section class="left-section">
+      <header>Upcoming</header>
+    {{ range where .Data.Pages ".Title" "yours" }}
+    <section class="project-upcoming-section">
+      <header>
+        <a href="{{ .Params.mainurl }}">
+          {{ partial "project_logo.html" . }}
+        </a>
+        <p class="project-upcoming-title">{{ .Title }}</p>
+      </header>
+      <aside>
+        {{ .Content }}
+      </aside>
+    </section>
+    </section>
+    {{ end }}
+    
     {{ range where .Data.Pages ".Title" "Contact Us" }}
     <article id="{{ .Title }}">
       <header>
