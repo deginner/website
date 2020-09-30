@@ -1,4 +1,5 @@
-website
-=======
++++ An Amazing Website +++
+============================
 
-An in progres static website for deginner.com. To build the website it's necessary to install [Hugo](http://gohugo.io/) and run `hugo`.
+An In Progress static website for deginner.com.In order to build the website it's necessary to install [Hugo](http://gohugo.io/) and run `hugo`.
+Thanks !
